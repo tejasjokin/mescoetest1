@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.ChoiceContainer
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
