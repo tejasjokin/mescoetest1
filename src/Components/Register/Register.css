@@ -1,0 +1,21 @@
+.greyed
+{
+	color: gray;
+}
+
+.cardContainer
+{
+	background: url(../../Images/CardBackground.png); 
+}
+
+.highlight
+{
+	color: #FF6300;
+}
+
+.hr
+{
+	height: 1px;
+	background-color: #FF6300;
+	border: none;
+}
