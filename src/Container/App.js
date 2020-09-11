@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Card from '../Components/Card/Card.js';
 import Navigation from '../Components/Navigation/Navigation.js';
 import SignIn from '../Components/SignIn/SignIn.js';
+import Home from '../Components/Home/Home.js;
 import Register from '../Components/Register/Register.js';
 import './App.css';
 import StudentImage from '../Images/StudentImage.png';
@@ -51,7 +52,7 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} />
+          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
         </div>
       );
     }
@@ -60,7 +61,14 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} />
+          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
+        </div>
+      );
+    }
+    else if(route==='Home'){
+      return(
+        <div className="App">
+          <Home/>
         </div>
       );
     }
