@@ -1,18 +1,16 @@
 .bg{
-    background: rgba(0, 0, 0, 0.507) url('../../Images/home_bg.png');
+    background: rgba(0, 0, 0, 0.507); /*url('../../Images/CardBackground.png');*/
     background-blend-mode: darken;
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 50vh;
     display:flex;
     justify-content: center;
     align-items: center;
     background-size: 100% 100%;
 }
 
-.discription{
+.description{
     display: flex;
-    text-align: left;
-    justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
 }
 
@@ -29,4 +27,5 @@
 }
 .btn:hover{
     background-color: #835a0f9a;
+    color: black;
 }
