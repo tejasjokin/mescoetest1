@@ -52,7 +52,7 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} />
+          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
         </div>
       );
     }
@@ -61,15 +61,14 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} />
+          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
         </div>
       );
     }
     else if(route==='Home'){
       return(
         <div className="App">
-          <Navigation onRouteChange = {this.onRouteChange}/>
-          <Home />
+          <Home/>
         </div>
       );
     }

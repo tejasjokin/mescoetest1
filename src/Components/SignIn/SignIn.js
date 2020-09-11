@@ -1,7 +1,7 @@
 import React from 'react';
 import 'tachyons';
 
-const SignIn = ({user_type}) => {
+const SignIn = ({user_type,onRouteChange}) => {
 	return(
 	<main className="pa4 black-80">
 	  <form className="measure center br3 pa3 shadow-2 cardContainer">
@@ -18,7 +18,7 @@ const SignIn = ({user_type}) => {
 	      <label className="pa0 ma0 lh-copy f5 pointer"><input type="checkbox" /> Remember me</label>
 	    </fieldset>
 	    <div className="">
-	      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Sign in" />
+	      <input onClick={()=>onRouteChange('Home')} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Sign in" />
 	    </div>
 	    <div className="lh-copy mt3">
 	      <a href="#0" className="f5 link dim black db">Sign up</a>
