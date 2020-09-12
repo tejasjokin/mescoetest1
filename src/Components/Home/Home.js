@@ -14,7 +14,7 @@ const Home = ({onRouteChange}) => {
             </nav>
 
 
-            <div className='bg'>
+            <div className='bg shadow-2'>
                 <div className='profile_pic'>
                     <div><img src="http://tachyons.io/img/logo.jpg" alt="profile" className='br-100 h8 w8 dib' /></div>
                 </div>

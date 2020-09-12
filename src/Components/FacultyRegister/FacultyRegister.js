@@ -1,16 +1,16 @@
 import React from 'react';
 import 'tachyons';
 
-const FacultyRegister = () => {
+const FacultyRegister = ({onNameChange, onEmailChange, onPRNChange, onPasswordChange, onEmployeeIDChange, onBranchChange}) => {
 	return(
 		<div>
 			<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Name</label>
-		        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name" />
+		        <input onChange = {(event) => onNameChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name" />
 	      	</div>
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Employee ID</label>
-		        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="EMP_ID"  id="EMP_ID" />
+		        <input onChange = {(event) => onEmployeeIDChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="EMP_ID"  id="EMP_ID" />
 	      	</div>
 		  	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Year</label>
@@ -24,7 +24,7 @@ const FacultyRegister = () => {
 	      	</div>
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Branch</label>
-		        <select className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="branch"  id="branch">
+		        <select onChange = {(event) => onBranchChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="branch"  id="branch">
 		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Class</option>
 		        	<option className = 'db fw6 lh-copy f4' value='CS'>CS</option>
 		        	<option className = 'db fw6 lh-copy f4' value='ENTC'>ENTC</option>
@@ -33,15 +33,15 @@ const FacultyRegister = () => {
 	      	</div>
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">PRN</label>
-		        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="PRN"  id="PRN" />
+		        <input onChange = {(event) => onPRNChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="PRN"  id="PRN" />
 	      	</div>
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Email</label>
-		        <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address" />
+		        <input onChange = {(event) => onEmailChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address" />
 	      	</div>
 	      	<div className="mv3">
 		        <label className="db fw6 lh-copy f4" htmlFor="password">Password</label>
-		        <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
+		        <input onChange = {(event) => onPasswordChange(event)} className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password" />
 	      	</div>
       	</div>
 	);

@@ -9,7 +9,47 @@ class Register extends Component {
 	super();
 	this.state = {
 		type: 'Student',
+		name: '',
+		PRN: '',
+		email: '',
+		password: '',
+		employeeID: '',
+		branch: '',
+		year: '',
+		div: ''
 	}	
+	}
+
+	onYearChange = (event) => {
+		this.setState({year: event.target.value})
+	}
+
+	onDivChange = (event) => {
+		this.setState({div: event.target.value})
+	}
+
+	onBranchChange = (event) => {
+		this.setState({branch: event.target.value})
+	}
+
+	onPRNChange = (event) => {
+		this.setState({PRN: event.target.value})
+	}
+
+	onEmployeeIDChange = (event) => {
+		this.setState({employeeID: event.target.value})
+	}
+
+	onNameChange = (event) => {
+		this.setState({name: event.target.value})
+	}
+
+	onEmailChange = (event) => {
+		this.setState({email: event.target.value})
+	}
+
+	onPasswordChange = (event) => {
+		this.setState({password: event.target.value})
 	}
 
 	onTypeChange = (type) => {
@@ -17,7 +57,7 @@ class Register extends Component {
 	}
 
 	render(){
-		const {type} = this.state;
+		const {type, year} = this.state;
 		if(type==='Student')
 		{
 		return(
@@ -35,7 +75,7 @@ class Register extends Component {
 			      		<hr />
 			      	</div>
 			      </div>
-			      <StudentRegister />
+			      <StudentRegister year = {year} onYearChange = {this.onYearChange} onDivChange = {this.onDivChange} onBranchChange = {this.onBranchChange} onNameChange = {this.onNameChange} onPRNChange = {this.onPRNChange} onPasswordChange = {this.onPasswordChange} onEmailChange = {this.onEmailChange}/>
 			    </fieldset>
 			    <div className="">
 			      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
@@ -64,7 +104,7 @@ class Register extends Component {
 		      		<hr className = 'hr'/>
 		      	</div>
 		      </div>
-		      <FacultyRegister />
+		      <FacultyRegister onBranchChange = {this.onBranchChange} onEmployeeIDChange = {this.onEmployeeIDChange} onNameChange = {this.onNameChange} onPRNChange = {this.onPRNChange} onPasswordChange = {this.onPasswordChange} onEmailChange = {this.onEmailChange}/>
 		    </fieldset>
 		    <div className="">
 		      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
