@@ -85,7 +85,8 @@ class App extends Component{
     else if(route==='Attendance'){
       return(
         <div className="App">
-          <Attendance onRouteChange={this.onRouteChange}/>
+          <Attendance />
+          <button className='btn1 grow shadow-5' onClick={()=>this.onRouteChange('Home')} >Check Attendance</button>
         </div>
       );
 

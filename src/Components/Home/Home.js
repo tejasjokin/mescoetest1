@@ -27,47 +27,47 @@ const Home = ({onRouteChange}) => {
                     </div>
                 </div>
             </div>
-            <div class="pa4">
-                <div class="overflow-auto">
-                    <table class="f6 w-100 mw8 center pa2 shadow-2 br2" cellspacing="0">
+            <div className="pa4">
+                <div className="overflow-auto">
+                    <table className="f6 w-100 mw8 center pa2 shadow-2 br2" cellSpacing="0">
                         <thead className='cardContainer'>
                             <tr>
-                                <th class="f3 fw6 bb b--black-20 tc pb3 pr3">Subject</th>
-                                <th class="f3 fw6 bb b--black-20 tc pb3 pr3">Total Lectures</th>
-                                <th class="f3 fw6 bb b--black-20 tc pb3 pr3">Attended</th>
-                                <th class="f3 fw6 bb b--black-20 tc pb3 pr3">Percentage</th>
+                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3">Subject</th>
+                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3">Total Lectures</th>
+                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3">Attended</th>
+                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3">Percentage</th>
                             </tr>
                         </thead>
-                        <tbody class="lh-copy">
+                        <tbody className="lh-copy">
                             <tr>
-                                <td class="pv3 pr3 bb b--black-20">Hassan Johnson</td>
-                                <td class="pv3 pr3 bb b--black-20">@hassan</td>
-                                <td class="pv3 pr3 bb b--black-20">hassan@companywithalongdomain.co</td>
-                                <td class="pv3 pr3 bb b--black-20">14419232532474</td>
+                                <td className="pv3 pr3 bb b--black-20">Hassan Johnson</td>
+                                <td className="pv3 pr3 bb b--black-20">@hassan</td>
+                                <td className="pv3 pr3 bb b--black-20">hassan@companywithalongdomain.co</td>
+                                <td className="pv3 pr3 bb b--black-20">14419232532474</td>
                             </tr>
                             <tr>
-                                <td class="pv3 pr3 bb b--black-20">Taral Hicks</td>
-                                <td class="pv3 pr3 bb b--black-20">@hicks</td>
-                                <td class="pv3 pr3 bb b--black-20">taral@companywithalongdomain.co</td>
-                                <td class="pv3 pr3 bb b--black-20">72326219423551</td>
+                                <td className="pv3 pr3 bb b--black-20">Taral Hicks</td>
+                                <td className="pv3 pr3 bb b--black-20">@hicks</td>
+                                <td className="pv3 pr3 bb b--black-20">taral@companywithalongdomain.co</td>
+                                <td className="pv3 pr3 bb b--black-20">72326219423551</td>
                             </tr>
                             <tr>
-                                <td class="pv3 pr3 bb b--black-20">Tyrin Turner</td>
-                                <td class="pv3 pr3 bb b--black-20">@tt</td>
-                                <td class="pv3 pr3 bb b--black-20">ty@companywithalongdomain.co</td>
-                                <td class="pv3 pr3 bb b--black-20">92325170324444</td>
+                                <td className="pv3 pr3 bb b--black-20">Tyrin Turner</td>
+                                <td className="pv3 pr3 bb b--black-20">@tt</td>
+                                <td className="pv3 pr3 bb b--black-20">ty@companywithalongdomain.co</td>
+                                <td className="pv3 pr3 bb b--black-20">92325170324444</td>
                             </tr>
                             <tr>
-                                <td class="pv3 pr3 bb b--black-20">Oliver Grant</td>
-                                <td class="pv3 pr3 bb b--black-20">@oli</td>
-                                <td class="pv3 pr3 bb b--black-20">oliverg@companywithalongdomain.co</td>
-                                <td class="pv3 pr3 bb b--black-20">71165170352909</td>
+                                <td className="pv3 pr3 bb b--black-20">Oliver Grant</td>
+                                <td className="pv3 pr3 bb b--black-20">@oli</td>
+                                <td className="pv3 pr3 bb b--black-20">oliverg@companywithalongdomain.co</td>
+                                <td className="pv3 pr3 bb b--black-20">71165170352909</td>
                             </tr>
                             <tr>
-                                <td class="pv3 pr3 bb b--black-20">Dean Blanc</td>
-                                <td class="pv3 pr3 bb b--black-20">@deanblanc</td>
-                                <td class="pv3 pr3 bb b--black-20">dean@companywithalongdomain.co</td>
-                                <td class="pv3 pr3 bb b--black-20">71865178111909</td>
+                                <td className="pv3 pr3 bb b--black-20">Dean Blanc</td>
+                                <td className="pv3 pr3 bb b--black-20">@deanblanc</td>
+                                <td className="pv3 pr3 bb b--black-20">dean@companywithalongdomain.co</td>
+                                <td className="pv3 pr3 bb b--black-20">71865178111909</td>
                             </tr>
                         </tbody>
                     </table>
