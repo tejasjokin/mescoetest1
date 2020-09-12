@@ -3,6 +3,7 @@ import Card from '../Components/Card/Card.js';
 import Navigation from '../Components/Navigation/Navigation.js';
 import SignIn from '../Components/SignIn/SignIn.js';
 import Home from '../Components/Home/Home.js';
+import Attendance from '../Components/Attendance/Attendance.js';
 import Register from '../Components/Register/Register.js';
 import './App.css';
 import StudentImage from '../Images/StudentImage.png';
@@ -68,7 +69,7 @@ class App extends Component{
     else if(route==='Home'){
       return(
         <div className="App">
-          <Home/>
+          <Home onRouteChange = {this.onRouteChange}/>
         </div>
       );
     }
@@ -80,6 +81,14 @@ class App extends Component{
           <Register />
         </div>
       );
+    }
+    else if(route==='Attendance'){
+      return(
+        <div className="App">
+          <Attendance onRouteChange={this.onRouteChange}/>
+        </div>
+      );
+
     }
   }
 }

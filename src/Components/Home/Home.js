@@ -2,15 +2,15 @@ import React from 'react';
 import 'tachyons';
 import './Home.css';
 
-const Home = () => {
+const Home = ({onRouteChange}) => {
     return (
         <div >
-            <nav className = 'pa3 ma1' style = {{display: 'flex', justifyContent: 'flex-end'}}>
+            <nav className = 'flex justify-end pa3 ma1'>
                 <img src="http://tachyons.io/img/logo.jpg" alt="logo" className='mh2 br-100 h2 w2 dib' />
-                <a className="link dim black f2 f3-ns dib ph3" href="#" title="Home">NoticeBoard</a>
-                <a className="link dim black f2 f3-ns dib ph3" href="#" title="About">Tests</a>
-                <a className="link dim black f2 f3-ns dib ph3" href="#" title="Store">Assignments</a>
-                <a className="link dim black f2 f3-ns dib" href="#" title="Contact">TimeTable</a>
+                <a className="link dim black f2 f3-ns dib ph3" href="0#" title="Home">NoticeBoard</a>
+                <a className="link dim black f2 f3-ns dib ph3" href="0#" title="About">Tests</a>
+                <a className="link dim black f2 f3-ns dib ph3" href="0#" title="Store">Assignments</a>
+                <a className="link dim black f2 f3-ns dib" href="0#" title="Contact">TimeTable</a>
             </nav>
 
 
@@ -23,7 +23,7 @@ const Home = () => {
                     <div className='b white f3 ma1'>F18112045</div>
                     <div className='b white f4 ma1'>Computer TE_2</div>
                     <div>
-                        <button className='grow btn'>Mark attendance</button>
+                        <button onClick={()=>onRouteChange('Attendance')} className='grow btn shadow-5'>Mark attendance</button>
                     </div>
                 </div>
             </div>
