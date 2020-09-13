@@ -4,6 +4,7 @@ import Navigation from '../Components/Navigation/Navigation.js';
 import SignIn from '../Components/SignIn/SignIn.js';
 import Home from '../Components/Home/Home.js';
 import Attendance from '../Components/Attendance/Attendance.js';
+import FacultyHome from '../Components/FacultyHome/FacultyHome.js';
 import Register from '../Components/Register/Register.js';
 import './App.css';
 import StudentImage from '../Images/StudentImage.png';
@@ -90,6 +91,22 @@ class App extends Component{
         </div>
       );
 
+    }
+    else if(route==='FacultyHome')
+    {
+      return(
+        <div className="App">
+          <FacultyHome />
+        </div>
+      );
+    }
+    else if(route==='Notice_Students')
+    {
+      return(
+        <div className="App">
+          <FacultyHome />
+        </div>
+      );
     }
   }
 }
