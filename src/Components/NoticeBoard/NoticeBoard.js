@@ -1,5 +1,6 @@
 import React from 'react';
 import 'tachyons';
+import './NoticeBoard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbtack, faBookmark,faTrash } from '@fortawesome/free-solid-svg-icons'
 
@@ -24,9 +25,9 @@ const NoticeBoard = () => {
                         vero eos et accusam et justo duo dolores et ea rebum.
                      </p>
                      <div className='flex justify-end' >
-                     <button><FontAwesomeIcon icon={faThumbtack} /></button>
-                     <button><FontAwesomeIcon icon={faBookmark} /></button>
-                     <button><FontAwesomeIcon icon={faTrash} /></button>
+                     <button className='icon_btn'><FontAwesomeIcon icon={faThumbtack} /></button>
+                     <button className='icon_btn'><FontAwesomeIcon icon={faBookmark} /></button>
+                     <button className='icon_btn'><FontAwesomeIcon icon={faTrash} /></button>
                      </div>
                 </div>
             </article>   
