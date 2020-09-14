@@ -25,9 +25,9 @@ const NoticeBoard = () => {
                         vero eos et accusam et justo duo dolores et ea rebum.
                      </p>
                      <div className='flex justify-end' >
-                     <button className='icon_btn'><FontAwesomeIcon icon={faThumbtack} /></button>
-                     <button className='icon_btn'><FontAwesomeIcon icon={faBookmark} /></button>
-                     <button className='icon_btn'><FontAwesomeIcon icon={faTrash} /></button>
+                     <button className='icon_btn grow pa2'><FontAwesomeIcon icon={faThumbtack} /></button>
+                     <button className='icon_btn grow pa2'><FontAwesomeIcon icon={faBookmark} /></button>
+                     <button className='icon_btn grow pa2'><FontAwesomeIcon icon={faTrash} /></button>
                      </div>
                 </div>
             </article>   
