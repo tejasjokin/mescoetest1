@@ -2,7 +2,7 @@ import React from 'react';
 import 'tachyons';
 import './FacultyHome.css'
 
-const FacultyHome = () => {
+const FacultyHome = ({passcode, onGenerate}) => {
         return (
                 <div>
                         <nav className='flex justify-end pa3 ma1'>
@@ -24,79 +24,87 @@ const FacultyHome = () => {
                                         <div className='b white f4 ma1'>Computer Dept</div>
                                 </div>
                         </div>
-                        <div className='b f2 white' >On Going Lec</div>
-                        <div className='b f3 white' >(Time)</div>
-                        <div>
-                                <button className='grow btn shadow-5'>Generate Pass Key</button>
+                        <div className = 'ma3 pa4 shadow-2'>
+                                <div className='b f2 black' >On Going Lecture</div>
+                                <div className='b f3 black' >(Time)</div>  
+                                <button onClick = {() => onGenerate()} className='btn1 grow shadow-5'>Generate passcode</button>
+                                <div className='b f2 black' >{passcode}</div>
                         </div>
-                        <div className='b f2 white' >P7852</div>
+                        <hr className = 'hr1'/>
                         <div className='f2 ma3' >Schedule</div>
-                        <div className='flex justify-center items-center f4 '>
-                                <table>
-                                        <tr>
-                                                <th className='pr3 pb3' ></th>
-                                                <th className='pr3 pb3' >Monday</th>
-                                                <th className='pr3 pb3' >Tuesday</th>
-                                                <th className='pr3 pb3' >Wednesday</th>
-                                                <th className='pr3 pb3' >Thursday</th>
-                                                <th className='pr3 pb3' >Friday</th>
-                                                <th className='pr3 pb3' >Saturday</th>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3 pv3' >11:45 am</th>
-                                                <td className='pr3 pv3' >SE2</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3 pv3 ' >11:45 am</th>
-                                                <td className='pr3 pv3 ' >SE2</td>
-                                                <td className='pr3 pv3 ' >SE3</td>
-                                                <td className='pr3 pv3 ' >SE3</td>
-                                                <td className='pr3 pv3 ' >SE3</td>
-                                                <td className='pr3 pv3 ' >SE3</td>
-                                                <td className='pr3 pv3 ' >SE3</td>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3  pv3' >11:45 am</th>
-                                                <td className='pr3  pv3' >SE2</td>
-                                                <td className='pr3  pv3' >SE3</td>
-                                                <td className='pr3  pv3' >SE3</td>
-                                                <td className='pr3  pv3' >SE3</td>
-                                                <td className='pr3  pv3' >SE3</td>
-                                                <td className='pr3  pv3' >SE3</td>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3 pv3' >11:45 am</th>
-                                                <td className='pr3 pv3' >SE2</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3 pv3' >11:45 am</th>
-                                                <td className='pr3 pv3' >SE2</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                        </tr>
-                                        <tr>
-                                                <th className='pr3 pv3' >11:45 am</th>
-                                                <td className='pr3 pv3' >SE2</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                                <td className='pr3 pv3' >SE3</td>
-                                        </tr>
-                                </table>
+                        <hr className = 'hr1'/>
+                        <div className='pa4'>
+                                <div className="overflow-auto">
+                                        <table className="f6 w-100 mw8 center pa2 shadow-2 br2" cellSpacing="0">
+                                                <thead className='cardContainer'>
+                                                        <tr>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" ></th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Monday</th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Tuesday</th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Wednesday</th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Thursday</th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Friday</th>
+                                                                <th className="f3 fw6 bb b--black-20 tc pb3 pr3" >Saturday</th>
+                                                        </tr>
+                                                </thead>
+                                                <tbody className="lh-copy">
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20" >11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20">11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20">SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20">SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20">SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20">SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20">SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20">SE3</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20">11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20" >11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20" >11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <th className="pv3 pr3 bb b--black-20" >11:45 am</th>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE2</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                                <td className="pv3 pr3 bb b--black-20" >SE3</td>
+                                                        </tr>
+                                                </tbody>
+                                        </table>
+                                </div>
                         </div>
                 </div>
         );

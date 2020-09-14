@@ -1,20 +1,20 @@
 import React from 'react';
 import 'tachyons';
-import './Home.css';
+import './StudentHome.css';
 
-const Home = ({onRouteChange}) => {
+const StudentHome = ({onRouteChange}) => {
     return (
         <div >
             <nav className = 'flex justify-end pa3 ma1'>
                 <img src="http://tachyons.io/img/logo.jpg" alt="logo" className='mh2 br-100 h2 w2 dib' />
-                <a className="link dim black f2 f3-ns dib ph3" href="0#" title="Home">NoticeBoard</a>
+                <a onClick = {() => onRouteChange('Notice_Students')} className="link dim black f2 f3-ns dib ph3" href="0#" title="Home">NoticeBoard</a>
                 <a className="link dim black f2 f3-ns dib ph3" href="0#" title="About">Tests</a>
                 <a className="link dim black f2 f3-ns dib ph3" href="0#" title="Store">Assignments</a>
                 <a className="link dim black f2 f3-ns dib" href="0#" title="Contact">TimeTable</a>
             </nav>
 
 
-            <div className='bg shadow-2'>
+            <div className='bg shadow-2Student'>
                 <div className='profile_pic'>
                     <div><img src="http://tachyons.io/img/logo.jpg" alt="profile" className='br-100 h8 w8 dib' /></div>
                 </div>
@@ -77,4 +77,4 @@ const Home = ({onRouteChange}) => {
     );
 }
 
-export default Home;
+export default StudentHome;

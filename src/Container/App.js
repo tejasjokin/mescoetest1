@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Card from '../Components/Card/Card.js';
 import Navigation from '../Components/Navigation/Navigation.js';
 import SignIn from '../Components/SignIn/SignIn.js';
-import Home from '../Components/Home/Home.js';
+import StudentHome from '../Components/StudentHome/StudentHome.js';
 import Attendance from '../Components/Attendance/Attendance.js';
 import FacultyHome from '../Components/FacultyHome/FacultyHome.js';
+import NoticeBoard from '../Components/NoticeBoard/NoticeBoard.js';
 import Register from '../Components/Register/Register.js';
 import './App.css';
 import StudentImage from '../Images/StudentImage.png';
@@ -15,6 +16,7 @@ class App extends Component{
   super();
   this.state = {
     route: 'landing',
+    passcode: '',
     user: {
       type: ''
     }
@@ -31,11 +33,16 @@ class App extends Component{
 
   onRouteChange = (route) => {
     this.setState({route: route});
+  }
+
+  onGenerate = () => {
+    let randomstring = Math.random().toString(36).slice(-8);
+    this.setState({passcode: randomstring});
   } 
 
   render()
   {
-    const {route, user} = this.state;
+    const {route, user, passcode} = this.state;
     const {type} = user;
     if(route==='landing')
     {
@@ -67,10 +74,10 @@ class App extends Component{
         </div>
       );
     }
-    else if(route==='Home'){
+    else if(route==='StudentHome'){
       return(
         <div className="App">
-          <Home onRouteChange = {this.onRouteChange}/>
+          <StudentHome onRouteChange = {this.onRouteChange}/>
         </div>
       );
     }
@@ -87,7 +94,7 @@ class App extends Component{
       return(
         <div className="App">
           <Attendance />
-          <button className='btn1 grow shadow-5' onClick={()=>this.onRouteChange('Home')} >Check Attendance</button>
+          <button className='btn1 grow shadow-5' onClick={()=>this.onRouteChange('StudentHome')} >Check Attendance</button>
         </div>
       );
 
@@ -96,7 +103,7 @@ class App extends Component{
     {
       return(
         <div className="App">
-          <FacultyHome />
+          <FacultyHome passcode = {passcode} onGenerate = {this.onGenerate} onRouteChange = {this.onRouteChange}/>
         </div>
       );
     }
@@ -104,7 +111,7 @@ class App extends Component{
     {
       return(
         <div className="App">
-          <FacultyHome />
+          <NoticeBoard />
         </div>
       );
     }

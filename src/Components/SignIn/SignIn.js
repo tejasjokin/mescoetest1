@@ -19,8 +19,20 @@ class SignIn extends Component{
 		this.setState({password: event.target.value});
 	}
 
+	onSignin = () => {
+		const{onRouteChange,user_type} = this.props;
+		if(user_type==='Faculty')
+		{
+			onRouteChange('FacultyHome');
+		}
+		else if(user_type==='Student')
+		{
+			onRouteChange('StudentHome');
+		}
+	}
+
 	render(){
-		const {onRouteChange,user_type} = this.props;
+		const{onRouteChange,user_type} = this.props;
 		return(
 			<main className="pa4 black-80">
 			  <form className="measure center br3 pa3 shadow-2 cardContainer">
@@ -37,7 +49,7 @@ class SignIn extends Component{
 			      <label className="pa0 ma0 lh-copy f5 pointer"><input type="checkbox" /> Remember me</label>
 			    </fieldset>
 			    <div className="">
-			      <input onClick={()=>onRouteChange('Home')} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Sign in" />
+			      <input onClick={()=>this.onSignin()} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Sign in" />
 			    </div>
 			    <div className="lh-copy mt3">
 			      <a href="#0" className="f5 link dim black db">Sign up</a>
