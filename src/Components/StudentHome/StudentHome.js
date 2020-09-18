@@ -2,7 +2,8 @@ import React from 'react';
 import 'tachyons';
 import './StudentHome.css';
 
-const StudentHome = ({onRouteChange}) => {
+const StudentHome = ({student_user, onRouteChange}) => {
+    // const {name, PRN, branch, year, div} = student_user;
     return (
         <div >
             <nav className = 'flex justify-end pa3 ma1'>
@@ -19,9 +20,9 @@ const StudentHome = ({onRouteChange}) => {
                     <div><img src="http://tachyons.io/img/logo.jpg" alt="profile" className='br-100 h8 w8 dib' /></div>
                 </div>
                 <div className='description pa4'>
-                    <div className='b white f2 ma1'>Tanmay Jagtap</div>
-                    <div className='b white f3 ma1'>F18112045</div>
-                    <div className='b white f4 ma1'>Computer TE_2</div>
+                    <div className='b white f2 ma1'>{student_user.name}</div>
+                    <div className='b white f3 ma1'>{student_user.PRN}</div>
+                    <div className='b white f4 ma1'>{student_user.branch} {student_user.year}{student_user.div}</div>
                     <div>
                         <button onClick={()=>onRouteChange('Attendance')} className='grow btn shadow-5'>Mark attendance</button>
                     </div>

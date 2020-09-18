@@ -1,4 +1,11 @@
 .icon_btn{
     background:none;
     border: none;
+    color: gray;
 }
+
+/*.icon_btn:active{
+    background:none;
+    border: none;
+    color: #FF6300;
+}*/

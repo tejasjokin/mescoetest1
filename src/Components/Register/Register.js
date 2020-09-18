@@ -64,7 +64,7 @@ class Register extends Component {
 			<main className="pa4 black-80">
 			  <form className="measure center br3 pa3 shadow-2 cardContainer">
 			    <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-			      <legend className="f2 fw6 ph0 mh0">Sign-In</legend>
+			      <legend className="f2 fw6 ph0 mh0">Register</legend>
 			      <div className = 'flex justify-center'>
 			      	<div className = 'ph3 pv3'>
 			      		<legend onClick = {() => this.onTypeChange('Student')} className="highlight link dim pointer f3 fw6 ph0 mh0">As a student</legend>

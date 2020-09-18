@@ -17,16 +17,30 @@ class App extends Component{
   this.state = {
     route: 'landing',
     passcode: '',
-    user: {
-      type: ''
+    type: '',
+    student_user: {
+      id: '',
+      name: '',
+      year: '',
+      branch: '',
+      div: '',
+      PRN: '',
+      email: '',
+      joined: '',
+    },
+    faculty_user: {
+      id: '',
+      name: '',
+      employeeID: '',
+      year: '',
+      branch: '',
+      PRN: '',
+      email: '',
     }
   }
   }
-
   setUserType = (type) => {
-    this.setState({user: {
-      type: type
-    }}, () => {
+    this.setState({type: type}, () => {
       this.onRouteChange(type);
     });
   }
@@ -40,10 +54,34 @@ class App extends Component{
     this.setState({passcode: randomstring});
   } 
 
+  loadStudent = (user) => {
+    this.setState({student_user: {
+      id: user.id,
+      name: user.name,
+      year: user.year,
+      branch: user.branch,
+      div: user.div,
+      PRN: user.PRN,
+      email: user.email,
+      joined: user.joined
+    }})
+  }
+
+  loadFaculty = (user) => {
+    this.setState({faculty_user:{
+      id: user.id,
+      name: user.name,
+      employeeID: user.employeeID,
+      year: user.year,
+      branch: user.branch,
+      PRN: user.PRN,
+      email: user.email, 
+    }})
+  }
+
   render()
   {
-    const {route, user, passcode} = this.state;
-    const {type} = user;
+    const {faculty_user, student_user, route, type, passcode} = this.state;
     if(route==='landing')
     {
       return(
@@ -61,7 +99,7 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
+          <SignIn user_type ={type} loadFaculty = {this.loadFaculty} loadStudent = {this.loadStudent} onRouteChange={this.onRouteChange} />
         </div>
       );
     }
@@ -70,14 +108,14 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <SignIn user_type ={type} onRouteChange={this.onRouteChange} />
+          <SignIn loadStudent = {this.loadStudent} loadFaculty = {this.loadFaculty} user_type ={type} onRouteChange={this.onRouteChange} />
         </div>
       );
     }
     else if(route==='StudentHome'){
       return(
         <div className="App">
-          <StudentHome onRouteChange = {this.onRouteChange}/>
+          <StudentHome student_user = {student_user} onRouteChange = {this.onRouteChange}/>
         </div>
       );
     }
@@ -103,7 +141,7 @@ class App extends Component{
     {
       return(
         <div className="App">
-          <FacultyHome passcode = {passcode} onGenerate = {this.onGenerate} onRouteChange = {this.onRouteChange}/>
+          <FacultyHome faculty_user = {faculty_user} passcode = {passcode} onGenerate = {this.onGenerate} onRouteChange = {this.onRouteChange}/>
         </div>
       );
     }

@@ -25,10 +25,10 @@ const FacultyRegister = ({onNameChange, onEmailChange, onPRNChange, onPasswordCh
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Branch</label>
 		        <select onChange = {(event) => onBranchChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="branch"  id="branch">
-		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Class</option>
-		        	<option className = 'db fw6 lh-copy f4' value='CS'>CS</option>
-		        	<option className = 'db fw6 lh-copy f4' value='ENTC'>ENTC</option>
-		        	<option className = 'db fw6 lh-copy f4' value='MECH'>MECH</option>
+		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Branch</option>
+		        	<option className = 'db fw6 lh-copy f4' value='CS'>Computer</option>
+		        	<option className = 'db fw6 lh-copy f4' value='ENTC'>Electronics and Telecommunications</option>
+		        	<option className = 'db fw6 lh-copy f4' value='MECH'>Mechanical</option>
 		        </select>
 	      	</div>
 	      	<div className="mt3">

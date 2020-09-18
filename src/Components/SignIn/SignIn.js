@@ -20,14 +20,54 @@ class SignIn extends Component{
 	}
 
 	onSignin = () => {
-		const{onRouteChange,user_type} = this.props;
+		const{loadFaculty, loadStudent,onRouteChange,user_type} = this.props;
 		if(user_type==='Faculty')
 		{
-			onRouteChange('FacultyHome');
+			fetch('http://localhost:3001/signin/faculty', {
+				method: 'post',
+				headers:  {'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					email: this.state.email,
+					password: this.state.password
+				})
+			})
+			.then(response => response.json())
+			.then(user => {
+				if(user.id)
+				{
+					onRouteChange('FacultyHome');
+					loadFaculty(user);
+				}
+				else
+				{
+					console.log(user);
+				}
+			})
+			.catch(err => console.log);
 		}
 		else if(user_type==='Student')
 		{
-			onRouteChange('StudentHome');
+			fetch('http://localhost:3001/signin/student', {
+				method: 'post',
+				headers:  {'Content-Type': 'application/json'},
+				body: JSON.stringify({
+					email: this.state.email,
+					password: this.state.password
+				})
+			})
+			.then(response => response.json())
+			.then(user => {
+				if(user.id)
+				{
+					onRouteChange('StudentHome');
+					loadStudent(user);
+				}
+				else
+				{
+					console.log(user);
+				}
+			})
+			.catch(err => console.log);
 		}
 	}
 
