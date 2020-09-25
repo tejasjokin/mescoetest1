@@ -3,7 +3,6 @@ import 'tachyons';
 import './StudentHome.css';
 
 const StudentHome = ({student_user, onRouteChange}) => {
-    // const {name, PRN, branch, year, div} = student_user;
     return (
         <div >
             <nav className = 'flex justify-end pa3 ma1'>
@@ -21,8 +20,8 @@ const StudentHome = ({student_user, onRouteChange}) => {
                 </div>
                 <div className='description pa4'>
                     <div className='b white f2 ma1'>{student_user.name}</div>
-                    <div className='b white f3 ma1'>{student_user.PRN}</div>
-                    <div className='b white f4 ma1'>{student_user.branch} {student_user.year}{student_user.div}</div>
+                    <div className='b white f3 ma1'>{student_user.prn}</div>
+                    <div className='b white f4 ma1'>{student_user.branch} {student_user.year}-{student_user.div}</div>
                     <div>
                         <button onClick={()=>onRouteChange('Attendance')} className='grow btn shadow-5'>Mark attendance</button>
                     </div>

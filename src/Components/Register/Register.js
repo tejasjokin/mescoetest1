@@ -5,59 +5,123 @@ import FacultyRegister from '../FacultyRegister/FacultyRegister.js';
 import 'tachyons';
 
 class Register extends Component {
-	constructor(){
-	super();
+	constructor(props){
+	super(props);
 	this.state = {
 		type: 'Student',
-		name: '',
-		PRN: '',
-		email: '',
-		password: '',
-		employeeID: '',
-		branch: '',
-		year: '',
-		div: ''
-	}	
+	    user: {
+	    }
+	}
 	}
 
 	onYearChange = (event) => {
-		this.setState({year: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			year: event.target.value
+		}})
 	}
 
 	onDivChange = (event) => {
-		this.setState({div: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			div: event.target.value
+		}})
 	}
 
 	onBranchChange = (event) => {
-		this.setState({branch: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			branch: event.target.value
+		}})
 	}
 
 	onPRNChange = (event) => {
-		this.setState({PRN: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			prn: event.target.value
+		}})
 	}
 
 	onEmployeeIDChange = (event) => {
-		this.setState({employeeID: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			employeeid: event.target.value
+		}})
 	}
 
 	onNameChange = (event) => {
-		this.setState({name: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			name: event.target.value
+		}})
 	}
 
 	onEmailChange = (event) => {
-		this.setState({email: event.target.value})
+		this.setState({user: {
+			...this.state.user,
+			email: event.target.value
+		}})
 	}
 
 	onPasswordChange = (event) => {
-		this.setState({password: event.target.value})
+		this.setState({user: { 
+			...this.state.user,
+			password: event.target.value
+		}})
 	}
 
 	onTypeChange = (type) => {
 		this.setState({type: type})
 	}
 
+	onRegister = () => {
+		if(this.state.type==='Student')
+		{
+			fetch('http://localhost:3001/register/student', {
+				method: 'post',
+				headers:  {'Content-Type': 'application/json'},
+				body: JSON.stringify(this.state.user)
+			})
+			.then(response => response.json())
+			.then(user => {
+				if(user.id)
+				{
+					this.props.loadStudent(user)
+					this.props.onRouteChange('StudentHome')
+				}
+				else
+				{
+					console.log(user);
+				}
+			})
+			.catch(err => console.log);
+		}
+		else
+		{
+			fetch('http://localhost:3001/register/faculty', {
+				method: 'post',
+				headers:  {'Content-Type': 'application/json'},
+				body: JSON.stringify(this.state.user)
+			})
+			.then(response => response.json())
+			.then(user => {
+				if(user.id)
+				{
+					this.props.loadFaculty(user);
+					this.props.onRouteChange('FacultyHome');
+				}
+				else
+				{
+					console.log(user);
+				}
+			})
+			.catch(err => console.log);
+		}
+	}
+
 	render(){
-		const {type, year} = this.state;
+		const {type, user} = this.state;
+		const {year} = user;
 		if(type==='Student')
 		{
 		return(
@@ -78,7 +142,7 @@ class Register extends Component {
 			      <StudentRegister year = {year} onYearChange = {this.onYearChange} onDivChange = {this.onDivChange} onBranchChange = {this.onBranchChange} onNameChange = {this.onNameChange} onPRNChange = {this.onPRNChange} onPasswordChange = {this.onPasswordChange} onEmailChange = {this.onEmailChange}/>
 			    </fieldset>
 			    <div className="">
-			      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
+			      <input onClick = {() => this.onRegister()} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
 			    </div>
 			    <div className="lh-copy mt3">
 			      <a href="#0" className="f5 link dim black db">Log in</a>
@@ -104,10 +168,10 @@ class Register extends Component {
 		      		<hr className = 'hr'/>
 		      	</div>
 		      </div>
-		      <FacultyRegister onBranchChange = {this.onBranchChange} onEmployeeIDChange = {this.onEmployeeIDChange} onNameChange = {this.onNameChange} onPRNChange = {this.onPRNChange} onPasswordChange = {this.onPasswordChange} onEmailChange = {this.onEmailChange}/>
+		      <FacultyRegister onYearChange = {this.onYearChange} onBranchChange = {this.onBranchChange} onEmployeeIDChange = {this.onEmployeeIDChange} onNameChange = {this.onNameChange} onPRNChange = {this.onPRNChange} onPasswordChange = {this.onPasswordChange} onEmailChange = {this.onEmailChange}/>
 		    </fieldset>
 		    <div className="">
-		      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
+		      <input onClick = {() => this.onRegister()} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f5 dib" type="button" value="Register" />
 		    </div>
 		    <div className="lh-copy mt3">
 		      <a href="#0" className="f5 link dim black db">Log in</a>

@@ -1,7 +1,7 @@
 import React from 'react';
 import 'tachyons';
 
-const FacultyRegister = ({onNameChange, onEmailChange, onPRNChange, onPasswordChange, onEmployeeIDChange, onBranchChange}) => {
+const FacultyRegister = ({onYearChange, onNameChange, onEmailChange, onPRNChange, onPasswordChange, onEmployeeIDChange, onBranchChange}) => {
 	return(
 		<div>
 			<div className="mt3">
@@ -14,7 +14,7 @@ const FacultyRegister = ({onNameChange, onEmailChange, onPRNChange, onPasswordCh
 	      	</div>
 		  	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Year</label>
-		        <select className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="year"  id="year">
+		        <select onChange = {(event) => onYearChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="year"  id="year">
 		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Year</option>
 		        	<option className = 'db fw6 lh-copy f4' value='FE'>FE</option>
 		        	<option className = 'db fw6 lh-copy f4' value='SE'>SE</option>
@@ -26,9 +26,9 @@ const FacultyRegister = ({onNameChange, onEmailChange, onPRNChange, onPasswordCh
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Branch</label>
 		        <select onChange = {(event) => onBranchChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="branch"  id="branch">
 		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Branch</option>
-		        	<option className = 'db fw6 lh-copy f4' value='CS'>Computer</option>
-		        	<option className = 'db fw6 lh-copy f4' value='ENTC'>Electronics and Telecommunications</option>
-		        	<option className = 'db fw6 lh-copy f4' value='MECH'>Mechanical</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Computer'>CSE</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Electronics and Telecommunications'>ENTC</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Mechanical'>MECH</option>
 		        </select>
 	      	</div>
 	      	<div className="mt3">

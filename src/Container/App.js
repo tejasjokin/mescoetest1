@@ -24,17 +24,17 @@ class App extends Component{
       year: '',
       branch: '',
       div: '',
-      PRN: '',
+      prn: '',
       email: '',
       joined: '',
     },
     faculty_user: {
       id: '',
       name: '',
-      employeeID: '',
+      employeeid: '',
       year: '',
       branch: '',
-      PRN: '',
+      prn: '',
       email: '',
     }
   }
@@ -61,7 +61,7 @@ class App extends Component{
       year: user.year,
       branch: user.branch,
       div: user.div,
-      PRN: user.PRN,
+      prn: user.prn,
       email: user.email,
       joined: user.joined
     }})
@@ -71,10 +71,10 @@ class App extends Component{
     this.setState({faculty_user:{
       id: user.id,
       name: user.name,
-      employeeID: user.employeeID,
+      employeeid: user.employeeid,
       year: user.year,
       branch: user.branch,
-      PRN: user.PRN,
+      prn: user.prn,
       email: user.email, 
     }})
   }
@@ -124,7 +124,7 @@ class App extends Component{
       return(
         <div className="App">
           <Navigation onRouteChange = {this.onRouteChange}/>
-          <Register />
+          <Register onRouteChange = {this.onRouteChange} loadFaculty = {this.loadFaculty} loadStudent = {this.loadStudent} />
         </div>
       );
     }

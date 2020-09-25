@@ -21,19 +21,19 @@ const StudentRegister = ({year, onNameChange, onPasswordChange, onEmailChange, o
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Branch</label>
 		        <select onChange = {(event) => onBranchChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="branch"  id="branch">
-		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Class</option>
-		        	<option className = 'db fw6 lh-copy f4' value='CS'>Computer</option>
-		        	<option className = 'db fw6 lh-copy f4' value='ENTC'>Electronics and Telecommunications</option>
-		        	<option className = 'db fw6 lh-copy f4' value='MECH'>Mechanical</option>
+		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Branch</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Computer'>CSE</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Electronics and Telecommunications'>ENTC</option>
+		        	<option className = 'db fw6 lh-copy f4' value='Mechanical'>MECH</option>
 		        </select>
 	      	</div>
 	      	<div className="mt3">
 		        <label className="db fw6 lh-copy f4" htmlFor="email-address">Class</label>
 		        <select onChange = {(event) => onDivChange(event)} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" name="class"  id="class">
 		        	<option className = 'db fw6 lh-copy f4 greyed' value='None'>Select Class</option>
-		        	<option className = 'db fw6 lh-copy f4' value='First'>{year}-1</option>
-		        	<option className = 'db fw6 lh-copy f4' value='Second'>{year}-2</option>
-		        	<option className = 'db fw6 lh-copy f4' value='Second Shift'>{year}-SS</option>
+		        	<option className = 'db fw6 lh-copy f4' value='1'>{year}-1</option>
+		        	<option className = 'db fw6 lh-copy f4' value='2'>{year}-2</option>
+		        	<option className = 'db fw6 lh-copy f4' value='SS'>{year}-SS</option>
 		        </select>
 	      	</div>
 	      	<div className="mt3">

@@ -20,7 +20,7 @@ const FacultyHome = ({faculty_user, passcode, onGenerate}) => {
                                 </div>
                                 <div className='description pa4'>
                                         <div className='b white f2 ma1'>{faculty_user.name}</div>
-                                        <div className='b white f3 ma1'>ID No: {faculty_user.PRN}</div>
+                                        <div className='b white f3 ma1'>ID No: {faculty_user.prn}</div>
                                         <div className='b white f4 ma1'>{faculty_user.branch} Dept</div>
                                 </div>
                         </div>
