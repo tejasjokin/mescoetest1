@@ -23,7 +23,7 @@ class SignIn extends Component{
 		const{loadFaculty, loadStudent,onRouteChange,user_type} = this.props;
 		if(user_type==='Faculty')
 		{
-			fetch('http://localhost:3001/signin/faculty', {
+			fetch('https://powerful-journey-93753.herokuapp.com/signin/faculty', {
 				method: 'post',
 				headers:  {'Content-Type': 'application/json'},
 				body: JSON.stringify({
@@ -47,7 +47,7 @@ class SignIn extends Component{
 		}
 		else if(user_type==='Student')
 		{
-			fetch('http://localhost:3001/signin/student', {
+			fetch('https://powerful-journey-93753.herokuapp.com/signin/student', {
 				method: 'post',
 				headers:  {'Content-Type': 'application/json'},
 				body: JSON.stringify({

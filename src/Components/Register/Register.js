@@ -77,7 +77,7 @@ class Register extends Component {
 	onRegister = () => {
 		if(this.state.type==='Student')
 		{
-			fetch('http://localhost:3001/register/student', {
+			fetch('https://powerful-journey-93753.herokuapp.com/register/student', {
 				method: 'post',
 				headers:  {'Content-Type': 'application/json'},
 				body: JSON.stringify(this.state.user)
@@ -98,7 +98,7 @@ class Register extends Component {
 		}
 		else
 		{
-			fetch('http://localhost:3001/register/faculty', {
+			fetch('https://powerful-journey-93753.herokuapp.com/register/faculty', {
 				method: 'post',
 				headers:  {'Content-Type': 'application/json'},
 				body: JSON.stringify(this.state.user)
