@@ -2,7 +2,7 @@ import React from 'react';
 import 'tachyons';
 import './FacultyHome.css'
 
-const FacultyHome = ({faculty_user, passcode, onGenerate}) => {
+const FacultyHome = ({ faculty_user, passcode, onGenerate }) => {
         return (
                 <div>
                         <nav className='flex justify-end pa3 ma1'>
@@ -24,15 +24,9 @@ const FacultyHome = ({faculty_user, passcode, onGenerate}) => {
                                         <div className='b white f4 ma1'>{faculty_user.branch} Dept</div>
                                 </div>
                         </div>
-                        <div className = 'ma3 pa4 shadow-2'>
-                                <div className='b f2 black' >On Going Lecture</div>
-                                <div className='b f3 black' >(Time)</div>  
-                                <button onClick = {() => onGenerate()} className='btn1 grow shadow-5'>Generate passcode</button>
-                                <div className='b f2 black' >{passcode}</div>
-                        </div>
-                        <hr className = 'hr1'/>
+                        <hr className='hr1' />
                         <div className='f2 ma3' >Schedule</div>
-                        <hr className = 'hr1'/>
+                        <hr className='hr1' />
                         <div className='pa4'>
                                 <div className="overflow-auto">
                                         <table className="f6 w-100 mw8 center pa2 shadow-2 br2" cellSpacing="0">
